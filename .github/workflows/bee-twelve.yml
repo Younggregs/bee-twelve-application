@@ -19,12 +19,12 @@ jobs:
       - name: Submit application to Bee Twelve
         env:
           # Non-secret applicant info (could also be GitHub environment or repo variables)
-          B12_APPLICANT_NAME: ${{ vars.BEE_TWELVE_APPLICANT_NAME }}
+          BEE_TWELVE_APPLICANT_NAME: ${{ vars.BEE_TWELVE_APPLICANT_NAME }}
           BEE_TWELVE_APPLICANT_EMAIL: ${{ vars.BEE_TWELVE_APPLICANT_EMAIL }}
           BEE_TWELVE_RESUME_LINK: ${{ vars.BEE_TWELVE_RESUME_LINK }}
           BEE_TWELVE_REPOSITORY_LINK: ${{ vars.BEE_TWELVE_REPOSITORY_LINK }}
 
           # Secret: set this repo/organization secret to the literal value: hello-there-from-b12
-          B12_SIGNING_SECRET: ${{ secrets.BEE_TWELVE_SIGNING_SECRET }}
+          BEE_TWELVE_SIGNING_SECRET: ${{ secrets.BEE_TWELVE_SIGNING_SECRET }}
         run: |
           python bee-twelve.py
