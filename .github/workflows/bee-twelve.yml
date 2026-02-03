@@ -28,10 +28,4 @@ jobs:
           # Secret: set this repo/organization secret to the literal value: hello-there-from-b12
           BEE_TWELVE_SIGNING_SECRET: ${{ secrets.BEE_TWELVE_SIGNING_SECRET }}
         run: |
-            echo "BEE_TWELVE_APPLICANT_NAME=$BEE_TWELVE_APPLICANT_NAME"
-            echo "BEE_TWELVE_APPLICANT_EMAIL=$BEE_TWELVE_APPLICANT_EMAIL"
-            echo "BEE_TWELVE_RESUME_LINK=$BEE_TWELVE_RESUME_LINK"
-            echo "BEE_TWELVE_REPOSITORY_LINK=$BEE_TWELVE_REPOSITORY_LINK"
-            echo "BEE_TWELVE_SIGNING_SECRET is set? [$([ -z "$BEE_TWELVE_SIGNING_SECRET" ] && echo NO || echo YES)]"
-
             python bee-twelve.py
