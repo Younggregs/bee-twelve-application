@@ -6,6 +6,7 @@ on:
 jobs:
   submit:
     runs-on: ubuntu-latest
+    environment: bee-twelve
 
     steps:
       - name: Check out repository
