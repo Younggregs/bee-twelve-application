@@ -47,7 +47,9 @@ def main() -> None:
         "timestamp": iso8601_utc_ms(),
     }
 
-    body_str = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    body_str = json.dumps(
+        payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+    )
     body = body_str.encode("utf-8")
 
     digest = hmac.new(signing_secret.encode("utf-8"), body, hashlib.sha256).hexdigest()
